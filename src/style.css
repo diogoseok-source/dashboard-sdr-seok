@@ -14,4 +14,5 @@
 /* Desktop dashboard rhythm: panels must remain visually independent. */
 #overview-data > .data-chart{margin-top:16px}
 #overview-data > .data-chart + .data-chart{margin-top:16px}
+.visual-gap{margin-bottom:16px}
 @media (max-width:720px){#overview-data > .data-chart,#overview-data > .data-chart + .data-chart{margin-top:0;margin-bottom:16px}}
