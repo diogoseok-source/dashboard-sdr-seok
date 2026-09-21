@@ -89,5 +89,7 @@ function download(content,name,type){let a=document.createElement('a');a.href=UR
 function exportCSV(){let rows=[['tipo','data','identificador','origem_status','valor','detalhes'],...db.launches.map(x=>['lançamento',x.date,x.lead,x.origin,'',x.note]),...db.contracts.map(x=>['contrato',x.signedDate,x.company,`${x.origin} · ${x.status}`,x.gross,x.note]),...db.team.map(x=>['bônus coletivo',x.month,'Contrato do time','',x.gross,x.note]),...db.tasks.map(x=>['pendência',x.due,x.type,x.status,'',x.note])];download('\ufeff'+rows.map(r=>r.map(v=>`"${String(v||'').replaceAll('"','""')}"`).join(';')).join('\n'),'backup-seok-sdr.csv','text/csv;charset=utf-8')}
 function importJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader;r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.settings||!Array.isArray(x.launches)||!Array.isArray(x.contracts))throw Error();db={...defaults,...x};save();render();toast('Backup importado')}catch{alert('Arquivo JSON de backup inválido.')}};r.readAsText(f)}
 function toast(t){setTimeout(()=>{let x=$('#toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)},0)}
+function startIntro(){document.body.classList.add('intro-active');setTimeout(()=>{document.body.classList.add('intro-reveal');$('#seok-splash')?.classList.add('leaving')},4200);setTimeout(()=>{$('#seok-splash')?.remove();document.body.classList.remove('intro-active','intro-reveal')},5000)}
 lockExistingContracts()
 render()
+startIntro()
