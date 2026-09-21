@@ -1,4 +1,5 @@
 import './style.css'
+import './mobile.css'
 
 const KEY='seok-sdr-rules-v2', now=new Date(), currentMonth=now.toISOString().slice(0,7)
 const defaults={settings:{name:'',startDate:'',salary:1500,goal:20,tax:12,bonusStep:25000,bonusValue:1000,guarantee:500,bands:[[6,1,12,2],[8,1.5,16,3],[10,2,20,4],[12,2.5,24,5]]},launches:[],contracts:[],team:[],tasks:[]}
@@ -90,6 +91,7 @@ function exportCSV(){let rows=[['tipo','data','identificador','origem_status','v
 function importJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader;r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.settings||!Array.isArray(x.launches)||!Array.isArray(x.contracts))throw Error();db={...defaults,...x};save();render();toast('Backup importado')}catch{alert('Arquivo JSON de backup inválido.')}};r.readAsText(f)}
 function toast(t){setTimeout(()=>{let x=$('#toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)},0)}
 function startIntro(){document.body.classList.add('intro-active');setTimeout(()=>{document.body.classList.add('intro-reveal');$('#seok-splash')?.classList.add('leaving')},4200);setTimeout(()=>{$('#seok-splash')?.remove();document.body.classList.remove('intro-active','intro-reveal')},5000)}
+document.addEventListener('click',e=>{if(e.target.closest('[data-tab]'))$('aside')?.classList.remove('open')})
 lockExistingContracts()
 render()
 startIntro()
