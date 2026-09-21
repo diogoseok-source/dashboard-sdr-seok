@@ -27,14 +27,17 @@ html,body,#app,main,.content{max-width:100%;overflow-x:hidden}.mobile{height:aut
 
 /* Form controls and navigation containment for narrow mobile viewports. */
 nav [data-tab="bonus"]{display:none}
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:clip}
 @media (max-width:720px){
+  main,.content,.panel,.card,.form,.form form,.form-grid,.inline,.table,.table-wrap,.chart-grid,.projection-grid,.top-financial,.metric-grid,.daily-actions,.head,section,article{min-width:0;max-width:100%}
   .content,.content>*,.panel,.card,.form,.form form,.form label,.form-grid>*,.bands>*,.daily-actions>*,.filter>*,.table-filters>*{min-width:0;max-width:100%}
   .content input,.content select,.content textarea,.content button{box-sizing:border-box;max-width:100%;min-width:0}
   .content input[type="date"],.content input[type="month"],.content select{width:100%;max-width:100%;min-width:0;box-sizing:border-box;padding-inline:10px;font-size:16px}
   .content input[type="date"]::-webkit-calendar-picker-indicator,.content input[type="month"]::-webkit-calendar-picker-indicator{margin-left:4px;flex:0 0 auto}
   .form form{gap:20px}.form label{gap:8px;overflow-wrap:anywhere}.form-grid{gap:20px}
   .daily-actions{grid-template-columns:1fr!important}.daily-actions .month,.daily-actions .secondary,.daily-actions .primary{grid-column:auto;width:100%}
-  .table{width:100%;max-width:100%;min-width:0;overscroll-behavior-inline:contain}.table:has(tbody td[colspan])::after{display:none}
+  .table,.table-wrap{width:100%;max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-inline:contain}.table:has(tbody td[colspan])::after{display:none}
   aside{width:min(86vw,340px);max-width:100vw;padding-inline:16px;z-index:4}
   aside.open{transform:translateX(0)!important}
   body.menu-open{overflow:hidden}
