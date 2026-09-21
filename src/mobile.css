@@ -6,3 +6,21 @@ html,body,#app,main,.content{max-width:100%;overflow-x:hidden}.mobile{height:aut
 @media (max-width:390px){.content .card,.content .mini-metric{padding:14px}.content .mini-metric span{font-size:13px}.content .mini-metric b{font-size:clamp(19px,6.3vw,24px)}.funnel-columns>div{min-height:108px}.funnel-columns em{font-size:9px}.line-axis span{font-size:10px}.table:after{font-size:10px}}
 @media (max-width:375px){.mobile{padding-left:12px;padding-right:12px}.content{padding-left:12px!important;padding-right:12px!important}.content h1{font-size:25px}.panel header p{font-size:12px}.funnel-columns{grid-template-columns:1fr}.funnel-columns>div{min-height:0}.funnel-columns span{font-size:12px}.funnel-columns b{font-size:21px}.recurrence-kpis{grid-template-columns:1fr}.line-card,.recurrence-card{height:235px!important}.line-wrap svg{height:122px}}
 @media (max-width:320px){.content{padding-left:10px!important;padding-right:10px!important}.mobile{padding-left:10px;padding-right:10px}.content .panel,.content .focus-card,.content .data-chart,.content .metric-section{padding:14px}.content h1{font-size:23px}.content h2{font-size:18px}.content .card>b,.hero-number,.content .hero-number,.content .focus-total,.content .projection-hero b{font-size:23px}.table{font-size:12px}}
+
+/* Overview chart rhythm: vertical spacing only, scoped to mobile. */
+@media (max-width:720px){
+  .visual-gap{margin-top:16px;margin-bottom:16px}
+  .chart-grid,.chart-pair{gap:16px;margin-bottom:16px}
+  #overview-data>.data-chart{margin-bottom:16px}
+  #overview-data .data-chart header{margin-bottom:16px}
+  #overview-data .data-chart header h2{margin-bottom:5px}
+  .funnel-flow{margin-bottom:12px}
+  .funnel-columns{row-gap:12px}
+  .empty-chart{margin:12px 0}
+  .funnel-support{margin-top:12px;row-gap:12px}
+  .compare-bars{gap:18px}
+  .compare-bars>div{padding:14px 0}
+  .compare-bars>div i{margin-top:13px}
+  #overview-data .legend,#overview-data .stack-legend{margin:0 0 16px}
+  #overview-data .bars,#overview-data .stack-bars{margin-bottom:16px}
+}
