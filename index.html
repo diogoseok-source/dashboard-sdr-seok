@@ -6,23 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#08090b" />
     <title>SEOK · Dashboard SDR</title>
-    <style>
-      html.intro-active { overflow: hidden; }
-      #opening { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; background: #08090b; opacity: 1; transition: opacity 350ms ease; }
-      #opening[hidden] { display: none; }
-      #opening.is-leaving { opacity: 0; }
-      #opening video { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
-      #opening-status { position: absolute; bottom: max(28px, env(safe-area-inset-bottom)); left: 20px; right: 20px; margin: 0; color: #fff; font: 500 12px/1.5 system-ui, sans-serif; text-align: center; letter-spacing: .14em; text-shadow: 0 2px 12px #000; }
-      @media (prefers-reduced-motion: reduce) { #opening { transition: none; } }
-    </style>
   </head>
   <body>
-    <section id="opening" aria-label="Abertura do dashboard">
-      <video id="opening-video" src="%BASE_URL%opening-avatar.mp4" autoplay muted playsinline preload="auto" aria-label="Avatar contando dinheiro"></video>
-      <p id="opening-status" role="status">SEOK · PREPARANDO SEU DASHBOARD</p>
-    </section>
-    <div id="app" inert></div>
-    <script type="module" src="/src/opening.js"></script>
+    <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
