@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/dashboard-sdr-seok/',
+  base: process.env.GITHUB_ACTIONS ? '/dashboard-sdr-seok/' : '/',
 })
